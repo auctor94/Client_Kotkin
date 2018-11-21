@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="1225.0" style="-fx-background-color: #faf8eb;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="MainFiles.PrizeInspectorController">
+   <children>
+      <TableView fx:id="tableViewStimulating" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="541.0" style="-fx-background-color: #e7e8e6; -fx-border-color: #FFFFFF; -fx-border-width: 4px;">
+        <columns>
+          <TableColumn fx:id="idFIOColum" prefWidth="135.0" text="ФИО" />
+          <TableColumn fx:id="idPostionColum" prefWidth="202.0" text="Должность" />
+            <TableColumn fx:id="idWageColum" prefWidth="97.0" text="Зарплата" />
+            <TableColumn fx:id="idPrizeColum" prefWidth="102.0" text="Премия" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableViewEncouraging" layoutX="14.0" layoutY="244.0" prefHeight="200.0" prefWidth="541.0" style="-fx-background-color: #e7e8e6; -fx-border-color: #FFFFFF; -fx-border-width: 4px;">
+        <columns>
+          <TableColumn fx:id="idfioColum" prefWidth="135.0" text="ФИО" />
+          <TableColumn fx:id="idDescColum" prefWidth="190.0" text="Описание" />
+            <TableColumn fx:id="idPrizeSizeColum" prefWidth="101.0" text="Размер премии" />
+            <TableColumn fx:id="idMonthColum" prefWidth="110.0" text="Месяц выплаты" />
+        </columns>
+      </TableView>
+      <Button layoutX="1014.0" layoutY="629.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="37.0" prefWidth="158.0" text="Выход" textAlignment="CENTER" />
+      <Pane layoutX="656.0" layoutY="14.0" prefHeight="606.0" prefWidth="516.0" style="-fx-background-color: #a7d8c5;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Начисление поощрительной премии:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Pane layoutX="14.0" layoutY="35.0" prefHeight="398.0" prefWidth="488.0" style="-fx-background-color: #e7e8e6; -fx-border-width: 2px; -fx-border-color: #9ca197;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Введите фамилию рабочего:" />
+                  <TextField fx:id="surEncTextField" layoutX="185.0" layoutY="10.0" prefHeight="25.0" prefWidth="278.0" promptText="Фамилия" />
+                  <Label layoutX="14.0" layoutY="54.0" text="Введите сумму премии:" />
+                  <TextField fx:id="moneyTextField" layoutX="185.0" layoutY="50.0" prefHeight="25.0" prefWidth="278.0" promptText="Сумма" />
+                  <Label layoutX="14.0" layoutY="152.0" text="Введите описание поощрительной премии:" />
+                  <TextArea fx:id="descriptionTextArea" layoutX="14.0" layoutY="178.0" prefHeight="180.0" prefWidth="449.0" promptText="В честь дня работника IT и т.д." style="-fx-wrap-text: true;" />
+                  <DatePicker fx:id="datePicker" layoutX="185.0" layoutY="106.0" />
+                  <Label layoutX="14.0" layoutY="100.0" prefHeight="37.0" prefWidth="158.0" text="Введите дату начисления премии:" wrapText="true" />
+                   <!--Не забыть снять здесь каомментарий!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!--><!--onAction="#OnEnrollButtonPushed"-->
+                  <Button layoutX="142.0" layoutY="363.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" style="-fx-border-width: 2px; -fx-border-color: #FFFFFF;" text="Зачислить" />
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="472.0" prefHeight="118.0" prefWidth="488.0" style="-fx-background-color: #e7e8e6; -fx-border-width: 2px; -fx-border-color: #9ca197;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Введите фамилию рабочего:" />
+                  <TextField fx:id="surStimulateTextField" layoutX="195.0" layoutY="10.0" prefHeight="25.0" prefWidth="267.0" promptText="Фамилия" />
+                  <Label layoutX="14.0" layoutY="50.0" text="Введите процент премии:" />
+                  <TextField fx:id="percentTextField" layoutX="195.0" layoutY="46.0" prefHeight="25.0" prefWidth="267.0" promptText="\%" />
+                   <!--Не забыть снять здесь каомментарий!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!--><!--onAction="#OnChangePercentButtonPushed"-->
+                  <Button layoutX="140.0" layoutY="79.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" style="-fx-border-color: #FFFFFF; -fx-border-width: 2px;" text="Изменить" />
+               </children>
+            </Pane>
+            <Label layoutX="14.0" layoutY="448.0" text="Изменение процента премии стимулирующего характера:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TableView fx:id="tableViewPercent" layoutX="14.0" layoutY="466.0" prefHeight="200.0" prefWidth="541.0" style="-fx-background-color: #e7e8e6; -fx-border-color: #FFFFFF; -fx-border-width: 4px;">
+        <columns>
+          <TableColumn fx:id="idNameColum" prefWidth="401.0000305175781" text=" ФИО" />
+          <TableColumn fx:id="idPercentColum" prefWidth="134.0" text="Процент премии" />
+        </columns>
+      </TableView>
+      <Line endX="45.0" endY="431.0" layoutX="555.0" layoutY="232.0" startX="45.0" startY="-217.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Line>
+   </children>
+</Pane>
