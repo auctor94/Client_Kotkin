@@ -13,6 +13,8 @@ import javafx.scene.control.cell.TextFieldTableCell;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -33,8 +35,6 @@ public class PrizeInspectorController implements Initializable {
     private TextArea descriptionTextArea;
     @FXML
     private DatePicker datePicker;
-    @FXML
-    private TextField surStimulateTextField;
     @FXML
     private TextField percentTextField;
     @FXML
@@ -58,16 +58,60 @@ public class PrizeInspectorController implements Initializable {
     @FXML
     private TableColumn<Percent, Float> idPercentColum;
 
-    /* @FXML
-    void OnChangePercentButtonPushed(ActionEvent event) {
+     @FXML
+    public void OnChangePercentButtonPushed(ActionEvent event) throws IOException {
+        if (percentTextField.getText().isEmpty()) {
+            ErrorWindow.display(" ", "Заполните поле ввода процента");
+        }
+        else {
+            Main.objectOutputStream.writeObject(3663);
+            Percent percentSelected = tableViewPercent.getSelectionModel().getSelectedItem();
+            percentSelected.setPercent(Float.valueOf(percentTextField.getText()));
+            Main.objectOutputStream.writeObject(1);
+            Main.objectOutputStream.writeObject(percentSelected.getFIO());//Это нам нужно, для того,
+            // чтобы по табельному номеру поменять значение записи
+            Main.objectOutputStream.writeObject(percentTextField.getText());
 
+            tableViewPercent.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+            try {
+                tableViewStimulating.setItems(getHighTable());
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
-    void OnEnrollButtonPushed(ActionEvent event) {
-
+    void OnEnrollButtonPushed(ActionEvent event) throws IOException, ParseException, ClassNotFoundException {
+        if (surEncTextField.getText().isEmpty() || moneyTextField.getText().isEmpty() || descriptionTextArea.getText().isEmpty()) {
+            ErrorWindow.display("Как так то...", "Заполните все поля ввода");
+            datePicker.setValue(LocalDate.now());
+        }
+        else {
+        Main.objectOutputStream.writeObject(3663);
+            Main.objectOutputStream.writeObject(2);
+            Main.objectOutputStream.writeObject(surEncTextField.getText());
+            if ((int)Main.objectInputStream.readObject() == 0)
+            {
+                ErrorWindow.display("Oops","Не найдено рабочего с такой фамилией");
+            }
+            else {
+                Main.objectOutputStream.writeObject(moneyTextField.getText());
+                Main.objectOutputStream.writeObject(descriptionTextArea.getText());
+                Main.objectOutputStream.writeObject(datePicker.getValue());
+                try {
+                    tableViewEncouraging.setItems(getMiddleTable());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
-*/
+
     @FXML
     public void changeScreenButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
         Main.objectOutputStream.writeObject(3333);
@@ -88,6 +132,14 @@ public class PrizeInspectorController implements Initializable {
         idPrizeColum.setCellValueFactory(new PropertyValueFactory<MainWorkerWageInformation, Float>("prizeWorker"));
 
 
+        idfioColum.setCellValueFactory(new PropertyValueFactory<PrizeEnrollInformation,String>("fioWorker"));
+        idDescColum.setCellValueFactory(new PropertyValueFactory<PrizeEnrollInformation,String>("descriptionPrize"));
+        idPrizeSizeColum.setCellValueFactory(new PropertyValueFactory<PrizeEnrollInformation, Float>("prizeEnroll"));
+        idMonthColum.setCellValueFactory(new PropertyValueFactory<PrizeEnrollInformation, LocalDate>("dateEnroll"));
+
+        idNameColum.setCellValueFactory(new PropertyValueFactory<Percent, String>("FIO"));
+        idPercentColum.setCellValueFactory(new PropertyValueFactory<Percent, Float>("percent"));
+
         //load dummy data
         try {
             tableViewStimulating.setItems(getHighTable());
@@ -97,20 +149,55 @@ public class PrizeInspectorController implements Initializable {
             e.printStackTrace();
         }
 
+        try {
+            tableViewEncouraging.setItems(getMiddleTable());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
-       /* //Update the table to allow for the first and last name fields
-        //to be editable
-        tableView.setEditable(true);
-        //   idBuildingColum.setCellFactory(TextFieldTableCell.forTableColumn());
-        //   idUserColum.setCellFactory(TextFieldTableCell.forTableColumn());
-        damagedItemsColum.setCellFactory(TextFieldTableCell.forTableColumn());
-        cityColum.setCellFactory(TextFieldTableCell.forTableColumn());
-        streetColum.setCellFactory(TextFieldTableCell.forTableColumn());
-        //  houseColum.setCellFactory(TextFieldTableCell.forTableColumn());
-*/
-/*
-        tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);*/
+        try {
+            tableViewPercent.setItems(getLowTable());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
+    private ObservableList<Percent> getLowTable() throws IOException, ClassNotFoundException {
+        ObservableList<Percent> lowTable = FXCollections.observableArrayList();
+        Main.objectOutputStream.writeObject(7779);
+        while (true) {
+            int t = (int) Main.objectInputStream.readObject();
+            if (0 != t)
+                break;
+            String idSurname =  (String)Main.objectInputStream.readObject();
+            float idPrize = (float) Main.objectInputStream.readObject();
+
+            lowTable.add(new Percent(idSurname,idPrize));
+
+        }
+        return lowTable;
+    }
+
+    private ObservableList<PrizeEnrollInformation> getMiddleTable() throws IOException, ClassNotFoundException {
+        ObservableList<PrizeEnrollInformation> middleTable = FXCollections.observableArrayList();
+        Main.objectOutputStream.writeObject(7778);
+        while (true) {
+            int t = (int) Main.objectInputStream.readObject();
+            if (0 != t)
+                break;
+            String idSurname =  (String)Main.objectInputStream.readObject();
+            String idDesc = (String) Main.objectInputStream.readObject();
+            float idPrize = (float) Main.objectInputStream.readObject();
+            LocalDate date = (LocalDate) Main.objectInputStream.readObject();
+
+            middleTable.add(new PrizeEnrollInformation(idSurname, idDesc, idPrize, date));
+
+        }
+        return middleTable;
     }
 
     private ObservableList<MainWorkerWageInformation> getHighTable() throws IOException, ClassNotFoundException {
@@ -130,5 +217,6 @@ public class PrizeInspectorController implements Initializable {
         }
         return highTable;
     }
+
 
 }

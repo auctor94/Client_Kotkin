@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -39,7 +40,8 @@ public class Main extends Application {
         objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         objectInputStream = new ObjectInputStream(socket.getInputStream());
         window = primaryStage;
-        window.setTitle("Вход");
+        window.setTitle("Я люблю курсачи!");
+        window.getIcons().add(new Image("MainFiles/cat.jpg"));
         VBox vBox = new VBox();
             vBox.setStyle("-fx-background-color: #a7d7c5");
         vBox.setPrefSize(50, 400);
