@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="&quot;Кажется, начинает что-то получатсья&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFiles/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFiles/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFiles/PrizeInspector.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFiles/PrizeInspector.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFiles/PrizeInspectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFiles/PrizeInspectorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client_Kotkin/MainFiles/AdminWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client_Kotkin/MainFiles/AdminWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client_Kotkin/MainFiles/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client_Kotkin/MainFiles/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client_Kotkin/MainFiles/PrizeInspector.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client_Kotkin/MainFiles/PrizeInspector.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client_Kotkin/MainFiles/PrizeInspectorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client_Kotkin/MainFiles/PrizeInspectorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFiles/AdminWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFiles/AdminWindow.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,27 +63,29 @@
     <session id="-1790615203">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.117" value="1" />
           <entry key="project.open.time.120" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.57" value="1" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.95" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fxml" value="96" />
-          <entry key="java" value="4609" />
+          <entry key="java" value="4744" />
+          <entry key="txt" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4609" />
+          <entry key="JAVA" value="4744" />
+          <entry key="PLAIN_TEXT" value="36" />
           <entry key="XML" value="96" />
         </counts>
       </usages-collector>
@@ -110,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainFiles/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="141" column="54" lean-forward="true" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="54" />
+            <state relative-caret-position="2091">
+              <caret line="141" column="54" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#upperLabelBlue#0;class#Main#0" />
@@ -137,37 +140,37 @@
         <entry file="file://$PROJECT_DIR$/src/MainFiles/PrizeInspector.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="833">
               <caret line="49" column="149" selection-start-line="49" selection-start-column="149" selection-end-line="49" selection-end-column="149" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainFiles/PrizeInspectorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="74" column="74" lean-forward="true" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
+            <state relative-caret-position="137">
+              <caret line="191" column="76" lean-forward="true" selection-start-line="191" selection-start-column="12" selection-end-line="191" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#OnChangePercentButtonPushed#0;class#PrizeInspectorController#0" />
                 <element signature="method#OnEnrollButtonPushed#0;class#PrizeInspectorController#0" />
                 <element signature="method#changeScreenButtonPushed#0;class#PrizeInspectorController#0" />
-                <element signature="method#initialize#0;class#PrizeInspectorController#0" />
                 <element signature="method#getLowTable#0;class#PrizeInspectorController#0" />
-                <element signature="method#getMiddleTable#0;class#PrizeInspectorController#0" />
                 <element signature="method#getHighTable#0;class#PrizeInspectorController#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainFiles/AdminWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2825">
-              <caret line="254" column="43" lean-forward="true" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="43" />
+            <state relative-caret-position="107">
+              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4729#5723#0" />
                 <element signature="method#lowerLineExitDismiss#0;class#AdminWindow#0" />
                 <element signature="method#deletObjectWindow#0;class#AdminWindow#0" />
                 <element signature="method#lowerLineExitDelet#0;class#AdminWindow#0" />
@@ -179,8 +182,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataSources/Percent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="323">
+              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#393#394#0" expanded="true" />
@@ -237,10 +240,10 @@
         <option value="$PROJECT_DIR$/src/DataSources/MainWorkerWageInformation.java" />
         <option value="$PROJECT_DIR$/src/DataSources/PrizeEnrollInformation.java" />
         <option value="$PROJECT_DIR$/src/DataSources/Percent.java" />
-        <option value="$PROJECT_DIR$/src/MainFiles/AdminWindow.java" />
         <option value="$PROJECT_DIR$/src/MainFiles/Main.java" />
         <option value="$PROJECT_DIR$/src/MainFiles/PrizeInspector.fxml" />
         <option value="$PROJECT_DIR$/src/MainFiles/PrizeInspectorController.java" />
+        <option value="$PROJECT_DIR$/src/MainFiles/AdminWindow.java" />
       </list>
     </option>
   </component>
@@ -309,9 +312,12 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/Всё для уроков/ПрогСП/Course work 5 term/Client_Kotkin/src/MainFiles/TablePersonnel.fxml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542923091916" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542923175546" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../СиТАиРИС/Laboratornaja_4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Server_Kotkin" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -417,18 +423,27 @@
       <workItem from="1542572512105" duration="1469000" />
       <workItem from="1542618981705" duration="16175000" />
       <workItem from="1542805354251" duration="78000" />
-      <workItem from="1542805565203" duration="20932000" />
+      <workItem from="1542805565203" duration="21154000" />
+      <workItem from="1543235607522" duration="6127000" />
     </task>
+    <task id="LOCAL-00001" summary="&quot;Кажется, начинает что-то получатсья&quot;">
+      <created>1542923098087</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542923098087</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61957000" />
+    <option name="totallyTimeSpent" value="68306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.43081313" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.43040848" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -437,7 +452,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31774193" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31774193" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -507,6 +522,8 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="&quot;Кажется, начинает что-то получатсья&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Кажется, начинает что-то получатсья&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -627,10 +644,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainFiles/cat.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="633" column="19" selection-start-line="633" selection-start-column="19" selection-end-line="633" selection-end-column="19" />
+          <folding>
+            <element signature="e#23072#23073#0" expanded="true" />
+            <element signature="e#23112#23113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainFiles/TablePersonnelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="128" column="82" lean-forward="true" selection-start-line="122" selection-start-column="7" selection-end-line="128" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainFiles/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="141" column="54" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#upperLabelBlue#0;class#Main#0" />
+            <element signature="method#lowerLineExit#0;class#Main#0" />
+            <element signature="method#lowerLineExitRegistr#0;class#Main#0" />
+            <element signature="method#panelInputLogPass#0;class#Main#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainFiles/TablePersonnel.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="179" selection-start-line="10" selection-start-column="129" selection-end-line="10" selection-end-column="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainFiles/PrizeInspector.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="149" selection-start-line="49" selection-start-column="149" selection-end-line="49" selection-end-column="149" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataSources/Percent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="323">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#393#394#0" expanded="true" />
@@ -648,67 +716,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainFiles/cat.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainFiles/TablePersonnel.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/MainFiles/PrizeInspectorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="179" selection-start-line="10" selection-start-column="129" selection-end-line="10" selection-end-column="179" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="633" column="19" selection-start-line="633" selection-start-column="19" selection-end-line="633" selection-end-column="19" />
-          <folding>
-            <element signature="e#23072#23073#0" expanded="true" />
-            <element signature="e#23112#23113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainFiles/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="141" column="54" lean-forward="true" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="54" />
+        <state relative-caret-position="137">
+          <caret line="191" column="76" lean-forward="true" selection-start-line="191" selection-start-column="12" selection-end-line="191" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#upperLabelBlue#0;class#Main#0" />
-            <element signature="method#lowerLineExit#0;class#Main#0" />
-            <element signature="method#lowerLineExitRegistr#0;class#Main#0" />
-            <element signature="method#panelInputLogPass#0;class#Main#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainFiles/PrizeInspector.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="49" column="149" selection-start-line="49" selection-start-column="149" selection-end-line="49" selection-end-column="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainFiles/TablePersonnelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="128" column="82" lean-forward="true" selection-start-line="122" selection-start-column="7" selection-end-line="128" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#changeScreenButtonPushed#0;class#TablePersonnelController#0" />
+            <element signature="method#OnChangePercentButtonPushed#0;class#PrizeInspectorController#0" />
+            <element signature="method#OnEnrollButtonPushed#0;class#PrizeInspectorController#0" />
+            <element signature="method#changeScreenButtonPushed#0;class#PrizeInspectorController#0" />
+            <element signature="method#getLowTable#0;class#PrizeInspectorController#0" />
+            <element signature="method#getHighTable#0;class#PrizeInspectorController#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainFiles/AdminWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2825">
-          <caret line="254" column="43" lean-forward="true" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="43" />
+        <state relative-caret-position="107">
+          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4729#5723#0" />
             <element signature="method#lowerLineExitDismiss#0;class#AdminWindow#0" />
             <element signature="method#deletObjectWindow#0;class#AdminWindow#0" />
             <element signature="method#lowerLineExitDelet#0;class#AdminWindow#0" />
@@ -716,25 +745,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainFiles/PrizeInspectorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="74" column="74" lean-forward="true" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#OnEnrollButtonPushed#0;class#PrizeInspectorController#0" />
-            <element signature="method#changeScreenButtonPushed#0;class#PrizeInspectorController#0" />
-            <element signature="method#initialize#0;class#PrizeInspectorController#0" />
-            <element signature="method#getLowTable#0;class#PrizeInspectorController#0" />
-            <element signature="method#getMiddleTable#0;class#PrizeInspectorController#0" />
-            <element signature="method#getHighTable#0;class#PrizeInspectorController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Client_Kotkin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ScopeChooserConfigurable.UI">
         <settings>
           <splitter-proportions>

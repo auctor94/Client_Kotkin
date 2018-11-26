@@ -182,40 +182,18 @@ public class AdminWindow {
 
 
 
-        Button button6 = new Button("Работа с альтернативами");
+        Button button6 = new Button("Создание отчетов");
         button6.setPrefSize(200, 41);
         button6.setOnAction(event -> {
-            try {
-                Main.objectOutputStream.writeObject(1116);
-                Main.objectOutputStream.flush();
-                URL url = null;
-                Parent root = null;
-                try {
-                    url = new File("src/main/resources/WorkWithAlternativ2.fxml").toURL();
-                    root = FXMLLoader.load(url);
 
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
+            try {
+                Main.objectOutputStream.flush();Main.objectOutputStream.writeObject(1116);
+                try {
+                    int idSurname =  (int) Main.objectInputStream.readObject();
+                    if (idSurname == 0) ErrorWindow.display("Уау", "Вы моете найти сгенерированный отчет по следуюзему адресу: ");
+                } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-//                URL url = null;
-//            Parent root= null;
-//            try {
-//                url = new File("src/main/resources/ExampleOfTableView.fxml").toURL();
-//                root = FXMLLoader.load(url);
-//
-//            } catch (MalformedURLException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-
-                Scene scene = new Scene(root);
-
-                Main.window.setScene(scene);
-                Main.window.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
