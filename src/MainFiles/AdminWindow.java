@@ -36,7 +36,7 @@ public class AdminWindow {
 
         VBox vBox = new VBox();
         vBox.setAlignment(Pos.CENTER);
-        vBox.setPrefSize(600, 600);
+        vBox.setPrefSize(600, 900);
 
 
         vBox.getChildren().addAll(Main.upperLabelBlue("Меню администратора"), centeralBoxAdminMenu(), Main.lowerLineExit(Main.scene1));
@@ -49,9 +49,9 @@ public class AdminWindow {
 
     public static GridPane centeralBoxAdminMenu() {
 
-        VBox vBox = new VBox(20);
+        VBox vBox = new VBox(10);
 
-        vBox.setPrefSize(600, 400);
+        vBox.setPrefSize(600, 500);
         GridPane gridPane = new GridPane();
 
         gridPane.setAlignment(Pos.CENTER);
@@ -75,7 +75,9 @@ public class AdminWindow {
         Label label6 = new Label("6. ");
         label6.setPrefSize(200, 80);
         label6.setAlignment(Pos.CENTER_RIGHT);
-
+        Label label7 = new Label("7. ");
+        label7.setPrefSize(200, 80);
+        label7.setAlignment(Pos.CENTER_RIGHT);
         Button button1 = new Button("Редактирование");
         button1.setPrefSize(200, 41);
         button1.setOnAction(event -> {
@@ -185,39 +187,77 @@ public class AdminWindow {
         Button button6 = new Button("Создание отчетов");
         button6.setPrefSize(200, 41);
         button6.setOnAction(event -> {
-
             try {
-                Main.objectOutputStream.flush();Main.objectOutputStream.writeObject(1116);
-                try {
-                    int idSurname =  (int) Main.objectInputStream.readObject();
-                    if (idSurname == 0) ErrorWindow.display("Уау", "Вы моете найти сгенерированный отчет по следуюзему адресу: ");
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
+                Main.objectOutputStream.writeObject(1116);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            URL url = null;
+            Parent root = null;
+            try {
+                url = new File("src/Reports/mainReport.fxml").toURL();
+                root = FXMLLoader.load(url);
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Scene scene = new Scene(root);
+            Main.window.setScene(scene);
+            Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+
+            Main.window.show();
+            Main.window.setX((primScreenBounds.getWidth() - Main.window.getWidth()) / 2);
+            Main.window.setY((primScreenBounds.getHeight() - Main.window.getHeight()) / 2);
+        });
+
+        Button button7 = new Button("Просмотр графиков");
+        button7.setPrefSize(200, 41);
+        button7.setOnAction(event -> {
+            try {
+                Main.objectOutputStream.writeObject(1117);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            URL url = null;
+            Parent root = null;
+            try {
+                url = new File("src/Charts/firstChart.fxml").toURL();
+                root = FXMLLoader.load(url);
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
 
-        });
+            Scene scene = new Scene(root);
 
+            Main.window.setScene(scene);
+            Main.window.show();
+        });
         Pane pane = new Pane();
         pane.setPrefSize(200, 80);
 
 
-        gridPane.setPrefSize(600, 400);
+        gridPane.setPrefSize(600, 600);
         gridPane.add(button1, 1, 0);
         gridPane.add(button2, 1, 1);
         gridPane.add(button3, 1, 2);
         gridPane.add(button4, 1, 3);
         gridPane.add(button5, 1, 4);
         gridPane.add(button6, 1, 5);
+        gridPane.add(button7, 1, 6);
         gridPane.add(label1, 0, 0);
         gridPane.add(label2, 0, 1);
         gridPane.add(label3, 0, 2);
         gridPane.add(label4, 0, 3);
         gridPane.add(label5, 0, 4);
         gridPane.add(label6, 0, 5);
+        gridPane.add(label7, 0, 6);
         gridPane.add(pane, 2, 0);
 
 
@@ -239,7 +279,7 @@ public class AdminWindow {
 
     private static HBox lowerLineExitDismiss(Scene sceneAdminMenu) {
         HBox bottomLabel = new HBox(100);
-        bottomLabel.setPrefSize(800, 200);
+        bottomLabel.setPrefSize(800, 00);
 
         TextField field = new TextField();
         TextField field2 = new TextField();
@@ -327,7 +367,5 @@ public class AdminWindow {
         bottomLabel.getChildren().addAll(field, button2);
         return bottomLabel;
     }
-
-
 }
 

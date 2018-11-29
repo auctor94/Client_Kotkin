@@ -64,7 +64,7 @@ public class Main extends Application {
 
     public static HBox upperLabelBlue(String text) {
         HBox topLabel = new HBox(5);
-        topLabel.setPrefSize(600, 100);
+        topLabel.setPrefSize(600, 80);
         javafx.scene.control.Label label = new Label(text);
         label.setFont(Font.font(20));
         //label.setFont(Font.);
@@ -156,7 +156,7 @@ public class Main extends Application {
 
     public static HBox lowerLineExit(Scene sceneReturn) {
         HBox hBox1 = new HBox();
-        hBox1.setPrefSize(600, 100);
+        hBox1.setPrefSize(600, 80);
 
 
         hBox1.setStyle("-fx-background-color: #34abf3");
