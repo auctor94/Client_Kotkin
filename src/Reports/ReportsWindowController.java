@@ -12,6 +12,7 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ReportsWindowController implements Initializable {
@@ -45,8 +46,12 @@ public class ReportsWindowController implements Initializable {
     }
 
     @FXML
-    void OnFullReportPushed(ActionEvent event) {
-
+    void OnFullReportPushed(ActionEvent event) throws IOException {
+        DirectoryChooser fileChooser = new DirectoryChooser();//Класс работы с диалогом выборки и сохранения
+        fileChooser.setTitle("Выбор папки для сохранения отчета");//Заголовок диалога
+        File file = fileChooser.showDialog(Main.window.getOwner());
+        Main.objectOutputStream.writeObject(8884);
+        Main.objectOutputStream.writeObject(file.getAbsolutePath());
     }
 
     @FXML
@@ -74,9 +79,14 @@ public class ReportsWindowController implements Initializable {
     }
 
     @FXML
-    void onThrdReportPushed(ActionEvent event) {
-
+    void onThrdReportPushed(ActionEvent event) throws IOException {
+        DirectoryChooser fileChooser = new DirectoryChooser();//Класс работы с диалогом выборки и сохранения
+        fileChooser.setTitle("Выбор папки для сохранения отчета");//Заголовок диалога
+        File file = fileChooser.showDialog(Main.window.getOwner());
+        Main.objectOutputStream.writeObject(8883);
+        Main.objectOutputStream.writeObject(file.getAbsolutePath());
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -36,50 +36,55 @@ public class AdminWindow {
 
         VBox vBox = new VBox();
         vBox.setAlignment(Pos.CENTER);
-        vBox.setPrefSize(600, 900);
+        vBox.setPrefSize(Screen.getPrimary().getBounds().getMaxX(), Screen.getPrimary().getBounds().getMaxY());
 
 
         vBox.getChildren().addAll(Main.upperLabelBlue("Меню администратора"), centeralBoxAdminMenu(), Main.lowerLineExit(Main.scene1));
-
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         Main.sceneAdminMenu = new Scene(vBox);
         Main.window.setScene(Main.sceneAdminMenu);
         Main.window.show();
+        Main.window.setX((primScreenBounds.getWidth() - Main.window.getWidth()) / 2);
+        Main.window.setY((primScreenBounds.getHeight() - Main.window.getHeight()) / 2);
     }
 
 
     public static GridPane centeralBoxAdminMenu() {
 
-        VBox vBox = new VBox(10);
+        VBox vBox = new VBox(5);
 
-        vBox.setPrefSize(600, 500);
+        vBox.setPrefSize(600, 600);
         GridPane gridPane = new GridPane();
 
         gridPane.setAlignment(Pos.CENTER);
 
 
         Label label1 = new Label("1. ");
-        label1.setPrefSize(200, 80);
+        label1.setPrefSize(200, 70);
         label1.setAlignment(Pos.CENTER_RIGHT);
         Label label2 = new Label("2. ");
-        label2.setPrefSize(200, 80);
+        label2.setPrefSize(200, 70);
         label2.setAlignment(Pos.CENTER_RIGHT);
         Label label3 = new Label("3. ");
-        label3.setPrefSize(200, 80);
+        label3.setPrefSize(200, 70);
         label3.setAlignment(Pos.CENTER_RIGHT);
         Label label4 = new Label("4. ");
-        label4.setPrefSize(200, 80);
+        label4.setPrefSize(200, 70);
         label4.setAlignment(Pos.CENTER_RIGHT);
         Label label5 = new Label("5. ");
-        label5.setPrefSize(200, 80);
+        label5.setPrefSize(200, 70);
         label5.setAlignment(Pos.CENTER_RIGHT);
         Label label6 = new Label("6. ");
-        label6.setPrefSize(200, 80);
+        label6.setPrefSize(200, 70);
         label6.setAlignment(Pos.CENTER_RIGHT);
         Label label7 = new Label("7. ");
-        label7.setPrefSize(200, 80);
+        label7.setPrefSize(200, 70);
         label7.setAlignment(Pos.CENTER_RIGHT);
+        Label label8 = new Label("8. ");
+        label8.setPrefSize(200, 70);
+        label8.setAlignment(Pos.CENTER_RIGHT);
         Button button1 = new Button("Редактирование");
-        button1.setPrefSize(200, 41);
+        button1.setPrefSize(200, 35);
         button1.setOnAction(event -> {
             try {
                 Main.objectOutputStream.writeObject(1114);
@@ -106,7 +111,7 @@ public class AdminWindow {
         });
 
         Button button4 = new Button("Уволить рабочего ");
-        button4.setPrefSize(200, 41);
+        button4.setPrefSize(200, 35);
         button4.setOnAction(event -> {
             try {
                 Main.objectOutputStream.writeObject(1111);
@@ -120,7 +125,7 @@ public class AdminWindow {
 
         });
         Button button2 = new Button("Просмотр данных");
-        button2.setPrefSize(200, 41);
+        button2.setPrefSize(200, 35);
         button2.setOnAction(event -> {
             try {
                 Main.objectOutputStream.writeObject(1112);
@@ -133,7 +138,7 @@ public class AdminWindow {
             }
         });
         Button button3 = new Button("Удаление рабочего");
-        button3.setPrefSize(200, 41);
+        button3.setPrefSize(200, 35);
         button3.setOnAction(event -> {
             try {
                 Main.objectOutputStream.flush();
@@ -150,7 +155,7 @@ public class AdminWindow {
 
 
         Button button5 = new Button("Окно оперирования премиями");
-        button5.setPrefSize(200, 41);
+        button5.setPrefSize(200, 35);
         button5.setOnAction(event -> {
            try {
                 Main.objectOutputStream.writeObject(1115);
@@ -185,7 +190,7 @@ public class AdminWindow {
 
 
         Button button6 = new Button("Создание отчетов");
-        button6.setPrefSize(200, 41);
+        button6.setPrefSize(200, 35);
         button6.setOnAction(event -> {
             try {
                 Main.objectOutputStream.writeObject(1116);
@@ -214,7 +219,7 @@ public class AdminWindow {
         });
 
         Button button7 = new Button("Просмотр графиков");
-        button7.setPrefSize(200, 41);
+        button7.setPrefSize(200, 35);
         button7.setOnAction(event -> {
             try {
                 Main.objectOutputStream.writeObject(1117);
@@ -239,11 +244,39 @@ public class AdminWindow {
             Main.window.setScene(scene);
             Main.window.show();
         });
+
+        Button button8 = new Button("Смена логина или пароля у пользователя");
+        button8.setPrefSize(200, 35);
+        button8.setOnAction(event -> {
+            try {
+                Main.objectOutputStream.writeObject(1118);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            URL url = null;
+            Parent root = null;
+            try {
+                url = new File("src/ChangeLogPass.fxml").toURL();
+                root = FXMLLoader.load(url);
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+            Scene scene = new Scene(root);
+
+            Main.window.setScene(scene);
+            Main.window.show();
+            Main.window.setX((primScreenBounds.getWidth() - Main.window.getWidth()) / 2);
+            Main.window.setY((primScreenBounds.getHeight() - Main.window.getHeight()) / 2);
+        });
         Pane pane = new Pane();
-        pane.setPrefSize(200, 80);
+        pane.setPrefSize(200, 70);
 
 
-        gridPane.setPrefSize(600, 600);
+        gridPane.setPrefSize(600, 500);
         gridPane.add(button1, 1, 0);
         gridPane.add(button2, 1, 1);
         gridPane.add(button3, 1, 2);
@@ -251,6 +284,7 @@ public class AdminWindow {
         gridPane.add(button5, 1, 4);
         gridPane.add(button6, 1, 5);
         gridPane.add(button7, 1, 6);
+        gridPane.add(button8, 1, 7);
         gridPane.add(label1, 0, 0);
         gridPane.add(label2, 0, 1);
         gridPane.add(label3, 0, 2);
@@ -258,6 +292,7 @@ public class AdminWindow {
         gridPane.add(label5, 0, 4);
         gridPane.add(label6, 0, 5);
         gridPane.add(label7, 0, 6);
+        gridPane.add(label8, 0, 7);
         gridPane.add(pane, 2, 0);
 
 
