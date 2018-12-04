@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="1029.0" style="-fx-background-color: #faf8eb;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DataSources.AddingController">
+   <children>
+      <Label layoutX="216.0" layoutY="33.0" text="Добавление нового рабочего:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="109.0" text="Фамилия:" />
+      <Label layoutX="84.0" layoutY="146.0" text="Имя:" />
+      <Label layoutX="83.0" layoutY="179.0" text="Отчество:" />
+      <Label layoutX="83.0" layoutY="215.0" text="Дата рождения:" />
+      <Label layoutX="83.0" layoutY="252.0" text="Образование:" />
+      <Label layoutX="82.0" layoutY="290.0" text="Дата найма:" />
+      <Label layoutX="83.0" layoutY="328.0" text="Код позиции:" />
+      <Label layoutX="82.0" layoutY="74.0" text="Табельный номер:" />
+      <TextField fx:id="tabellnyj" layoutX="198.0" layoutY="70.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="familia" layoutX="198.0" layoutY="105.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="imya" layoutX="198.0" layoutY="138.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="otchestvo" layoutX="198.0" layoutY="175.0" prefHeight="25.0" prefWidth="174.0" />
+      <DatePicker fx:id="birth" layoutX="199.0" layoutY="211.0" />
+      <TextField fx:id="education" layoutX="198.0" layoutY="248.0" prefHeight="25.0" prefWidth="174.0" />
+      <DatePicker fx:id="naima" layoutX="199.0" layoutY="286.0" />
+      <TextField fx:id="position" layoutX="199.0" layoutY="324.0" prefHeight="25.0" prefWidth="174.0" />
+      <Button fx:id="addButton" layoutX="246.0" layoutY="551.0" mnemonicParsing="false" onAction="#onAddButtonPushed" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #74b49a; -fx-border-color: #ffffff; -fx-border-width: 2px;" text="Добавить" />
+      <Button fx:id="exitButton" layoutX="659.0" layoutY="551.0" mnemonicParsing="false" onAction="#OnExitButtonPushed" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #74b49a; -fx-border-color: #ffffff; -fx-border-width: 2px;" text="Отмена" />
+      <TextField fx:id="oklad" layoutX="198.0" layoutY="369.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="procent" layoutX="199.0" layoutY="413.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="84.0" layoutY="373.0" text="Оклад:" />
+      <Label layoutX="86.0" layoutY="417.0" text="Процент премии:" />
+      <Label layoutX="84.0" layoutY="458.0" text="Код доплаты:" />
+      <TextField fx:id="koddoplaty" layoutX="198.0" layoutY="454.0" prefHeight="25.0" prefWidth="174.0" promptText="Необязательное поле" />
+      <TableView fx:id="addTable" layoutX="451.0" layoutY="63.0" prefHeight="200.0" prefWidth="306.0">
+        <columns>
+          <TableColumn fx:id="positionColum" prefWidth="89.0" text="Код позиции" />
+          <TableColumn fx:id="namePOsitionColum" prefWidth="216.0" text="Название должности" />
+        </columns>
+      </TableView>
+      <TableView fx:id="addTable2" layoutX="451.0" layoutY="282.0" prefHeight="200.0" prefWidth="539.0">
+        <columns>
+          <TableColumn fx:id="codeSurColum" prefWidth="96.0" text="Код доплаты" />
+          <TableColumn fx:id="nameSurColum" prefWidth="442.0" text="Название доплаты" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="tabArea" editable="false" layoutX="780.0" layoutY="63.0" prefHeight="200.0" prefWidth="210.0" wrapText="true" />
+   </children>
+</AnchorPane>

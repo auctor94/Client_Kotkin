@@ -50,14 +50,16 @@ public class ReportsWindowController implements Initializable {
         DirectoryChooser fileChooser = new DirectoryChooser();//Класс работы с диалогом выборки и сохранения
         fileChooser.setTitle("Выбор папки для сохранения отчета");//Заголовок диалога
         File file = fileChooser.showDialog(Main.window.getOwner());
-        Main.objectOutputStream.writeObject(8884);
-        Main.objectOutputStream.writeObject(file.getAbsolutePath());
+        if (file==null)
+        {
+            System.out.println("Вы не выбрали каталог для отчета");
+        }
+        else {
+            Main.objectOutputStream.writeObject(8884);
+            Main.objectOutputStream.writeObject(file.getAbsolutePath());
+        }
     }
 
-    @FXML
-    void OnTreeReportPushed(ActionEvent event) {
-
-    }
 
     @FXML
     void onFirstReportPushed(ActionEvent event) throws IOException {
@@ -65,8 +67,14 @@ public class ReportsWindowController implements Initializable {
         DirectoryChooser fileChooser = new DirectoryChooser();//Класс работы с диалогом выборки и сохранения
         fileChooser.setTitle("Выбор папки для сохранения отчета");//Заголовок диалога
         File file = fileChooser.showDialog(Main.window.getOwner());
+        if (file==null)
+        {
+            System.out.println("Вы не выбрали каталог для отчета");
+        }
+        else {
             Main.objectOutputStream.writeObject(8881);
-        Main.objectOutputStream.writeObject(file.getAbsolutePath());
+            Main.objectOutputStream.writeObject(file.getAbsolutePath());
+        }
     }
 
     @FXML
@@ -74,8 +82,14 @@ public class ReportsWindowController implements Initializable {
         DirectoryChooser fileChooser = new DirectoryChooser();//Класс работы с диалогом выборки и сохранения
         fileChooser.setTitle("Выбор папки для сохранения отчета");//Заголовок диалога
         File file = fileChooser.showDialog(Main.window.getOwner());
-        Main.objectOutputStream.writeObject(8882);
-        Main.objectOutputStream.writeObject(file.getAbsolutePath());
+        if (file==null)
+        {
+            System.out.println("Вы не выбрали каталог для отчета");
+        }
+        else {
+            Main.objectOutputStream.writeObject(8882);
+            Main.objectOutputStream.writeObject(file.getAbsolutePath());
+        }
     }
 
     @FXML
@@ -83,8 +97,14 @@ public class ReportsWindowController implements Initializable {
         DirectoryChooser fileChooser = new DirectoryChooser();//Класс работы с диалогом выборки и сохранения
         fileChooser.setTitle("Выбор папки для сохранения отчета");//Заголовок диалога
         File file = fileChooser.showDialog(Main.window.getOwner());
-        Main.objectOutputStream.writeObject(8883);
-        Main.objectOutputStream.writeObject(file.getAbsolutePath());
+        if (file==null)
+        {
+            System.out.println("Вы не выбрали каталог для отчета");
+        }
+        else {
+            Main.objectOutputStream.writeObject(8883);
+            Main.objectOutputStream.writeObject(file.getAbsolutePath());
+        }
     }
 
 

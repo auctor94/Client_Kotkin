@@ -83,6 +83,9 @@ public class AdminWindow {
         Label label8 = new Label("8. ");
         label8.setPrefSize(200, 70);
         label8.setAlignment(Pos.CENTER_RIGHT);
+        Label label9 = new Label("9. ");
+        label8.setPrefSize(200, 70);
+        label8.setAlignment(Pos.CENTER_RIGHT);
         Button button1 = new Button("Редактирование");
         button1.setPrefSize(200, 35);
         button1.setOnAction(event -> {
@@ -256,7 +259,7 @@ public class AdminWindow {
             URL url = null;
             Parent root = null;
             try {
-                url = new File("src/ChangeLogPass.fxml").toURL();
+                url = new File("src/ChangeLogPass/ChangeLogPass.fxml").toURL();
                 root = FXMLLoader.load(url);
 
             } catch (MalformedURLException e) {
@@ -272,6 +275,32 @@ public class AdminWindow {
             Main.window.setX((primScreenBounds.getWidth() - Main.window.getWidth()) / 2);
             Main.window.setY((primScreenBounds.getHeight() - Main.window.getHeight()) / 2);
         });
+        Button button9 = new Button("Добавление нового рабочего");
+        button9.setPrefSize(200, 35);
+        button9.setOnAction(event -> {
+            try {
+                Main.objectOutputStream.writeObject(1119);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            URL url = null;
+            Parent root = null;
+            try {
+                url = new File("src/DataSources/Adding.fxml").toURL();
+                root = FXMLLoader.load(url);
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Scene scene = new Scene(root);
+
+            Main.window.setScene(scene);
+            Main.window.show();
+        });
+
         Pane pane = new Pane();
         pane.setPrefSize(200, 70);
 
@@ -285,6 +314,7 @@ public class AdminWindow {
         gridPane.add(button6, 1, 5);
         gridPane.add(button7, 1, 6);
         gridPane.add(button8, 1, 7);
+        gridPane.add(button9,2,0);
         gridPane.add(label1, 0, 0);
         gridPane.add(label2, 0, 1);
         gridPane.add(label3, 0, 2);
@@ -293,7 +323,8 @@ public class AdminWindow {
         gridPane.add(label6, 0, 5);
         gridPane.add(label7, 0, 6);
         gridPane.add(label8, 0, 7);
-        gridPane.add(pane, 2, 0);
+
+        gridPane.add(pane, 3, 0);
 
 
         return gridPane;
