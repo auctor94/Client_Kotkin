@@ -3,10 +3,7 @@ package MainFiles;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -84,6 +81,7 @@ public class Main extends Application {
         label1.setFont(Font.font(30));
         Label label2 = new Label("Введите данные нового пользователя");
         label2.setFont(Font.font(15));
+        CheckBox isAdmin = new CheckBox("Регистрировать как админа?");
 
         TextField text = new TextField();
         text.setPromptText("Логин");
@@ -98,10 +96,10 @@ public class Main extends Application {
 
         registeVBox.setAlignment(Pos.CENTER);
        button1.setOnAction(event -> {
-            registerUser(text.getText(), text1.getText());
+            registerUser(text.getText(), text1.getText(), isAdmin.isSelected());
         });
 
-        registeVBox.getChildren().addAll(label1, label2, text, text1, button1);
+        registeVBox.getChildren().addAll(label1, label2, text, text1, button1,isAdmin);
 
         Button buttonExit = new Button("Выход");
         buttonExit.setPrefSize(100, 50);
@@ -129,19 +127,23 @@ public class Main extends Application {
 
     }
 
-    public static void registerUser(String name, String pass) {
+    public static void registerUser(String name, String pass, boolean isAdmin) {
         try {
             if (name.isEmpty() || pass.isEmpty()) {
                 ErrorWindow.display("Ошибка", "Нет данных");
             } else {
                 objectOutputStream.writeObject(888);
+                if (isAdmin)
+                {
+                    objectOutputStream.writeObject(1);
+                } else objectOutputStream.writeObject(0);
                 objectOutputStream.writeObject(name);
                 objectOutputStream.writeObject(pass);
                 int tmp = (int) objectInputStream.readObject();
                 if (tmp == 1)
                     ErrorWindow.display(" ", "Круто");
                 else
-                    ErrorWindow.display("Ошибка", "Данный пользователь уже существует");
+                    ErrorWindow.display("Ошибка", "Данный пользователь уже существует либо нет свободного места в секции для администратора");
 
 
             }
