@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,16 +28,20 @@ public class UserWindow {
     public static void menuUser() {
 
         VBox vBox = new VBox();
-
+        vBox.setAlignment(Pos.CENTER);
         vBox.getChildren().addAll(Main.upperLabelBlue("Меню пользователя"), centeralBoxUserMenu(), Main.lowerLineExit(Main.scene1));
+        vBox.setPrefSize(Screen.getPrimary().getBounds().getMaxX(), Screen.getPrimary().getBounds().getMaxY());
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
 
-        Main.sceneUserMenu = new Scene(vBox, 600, 600);
+        Main.sceneUserMenu = new Scene(vBox);
         Main.window.setScene(Main.sceneUserMenu);
         Main.window.show();
+        Main.window.setX((primScreenBounds.getWidth() - Main.window.getWidth()) / 2);
+        Main.window.setY((primScreenBounds.getHeight() - Main.window.getHeight()) / 2);
     }
 
     private static GridPane centeralBoxUserMenu() {
-        VBox vBox = new VBox(20);
+        VBox vBox = new VBox(15);
 
         vBox.setPrefSize(600, 400);
         GridPane gridPane = new GridPane();
@@ -59,35 +65,67 @@ public class UserWindow {
         label5.setPrefSize(200, 80);
         label5.setAlignment(Pos.CENTER_RIGHT);
 
-        Button button1 = new Button("Добавить объкта на рассмотрение");
+        Button button1 = new Button("Просмотр графиков");
         button1.setPrefSize(200, 50);
-       /* button1.setOnAction(event -> {
+        button1.setOnAction(event -> {
             try {
-                Start.objectOutputStream.flush();
-                Start.objectOutputStream.writeObject(2221);
-                addBuildingUserWindow();
-                // System.out.println((String) Start.objectInputStream.readObject());
+                Main.objectOutputStream.flush();
+                try {
+                    Main.objectOutputStream.writeObject(2221);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                URL url = null;
+                Parent root = null;
+                try {
+                    url = new File("src/Charts/firstChart.fxml").toURL();
+                    root = FXMLLoader.load(url);
 
-            } catch (SQLException e) {
-                ErrorWindow.display("Ошибка", "Ошибка при добалении здания");
-            } catch (IOException e) {
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                Scene scene = new Scene(root);
+
+                Main.window.setScene(scene);
+                Main.window.show();
+
+            }
+             catch (IOException e) {
                 e.printStackTrace();
             }
-        });*/
-        Button button2 = new Button("Редактирование/Удаление");
+        });
+        Button button2 = new Button("Создание отчётов");
         button2.setPrefSize(200, 50);
-       /* button2.setOnAction(event -> {
+        button2.setOnAction(event -> {
             try {
-                Start.objectOutputStream.flush();
-                Start.objectOutputStream.writeObject(2222);
+                Main.objectOutputStream.writeObject(2222);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            URL url = null;
+            Parent root = null;
+            try {
+                url = new File("src/Reports/mainReport.fxml").toURL();
+                root = FXMLLoader.load(url);
 
-                updateCharter();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
+            Scene scene = new Scene(root);
+            Main.window.setScene(scene);
+            Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
 
-        });*/
+            Main.window.show();
+            Main.window.setX((primScreenBounds.getWidth() - Main.window.getWidth()) / 2);
+            Main.window.setY((primScreenBounds.getHeight() - Main.window.getHeight()) / 2);
+        });
         Button button3 = new Button("Просмотр данных");
         button3.setPrefSize(200, 50);
         button3.setOnAction(event -> {
@@ -103,27 +141,49 @@ public class UserWindow {
             }
 
         });
-//        Button button4 = new Button("");
-//        button4.setPrefSize(200, 50);
-//        button4.setOnAction(event -> {
-//        });
-//        Button button5 = new Button("");
-//        button5.setPrefSize(200, 50);
-//        button5.setOnAction(event -> {
-//
-//        });
+        Button button4 = new Button("Поиск и фильтрация");
+        button4.setPrefSize(200, 50);
+       button4.setOnAction(event -> {
+           try {
+               Main.objectOutputStream.writeObject(2224);
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+           URL url = null;
+           Parent root = null;
+           try {
+               url = new File("src/Search/Search.fxml").toURL();
+               root = FXMLLoader.load(url);
+
+           } catch (MalformedURLException e) {
+               e.printStackTrace();
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+
+           Scene scene = new Scene(root);
+           Main.window.setScene(scene);
+           Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+
+           Main.window.show();
+           Main.window.setX((primScreenBounds.getWidth() - Main.window.getWidth()) / 2);
+           Main.window.setY((primScreenBounds.getHeight() - Main.window.getHeight()) / 2);
+       });
+
 
         Pane pane = new Pane();
-        pane.setPrefSize(200, 80);
+        pane.setPrefSize(200, 70);
 
         gridPane.setPrefSize(600, 400);
         gridPane.add(button1, 1, 0);
         gridPane.add(button2, 1, 1);
         gridPane.add(button3, 1, 2);
+        gridPane.add(button4,1,3);
 
         gridPane.add(label1, 0, 0);
         gridPane.add(label2, 0, 1);
         gridPane.add(label3, 0, 2);
+        gridPane.add(label4,0,3);
         gridPane.add(pane, 2, 0);
 
         return gridPane;
@@ -134,6 +194,7 @@ public class UserWindow {
 
 
         VBox vBox = new VBox();
+
         //  int id = ConnectSQL.getIdClient();
         if (id > 0 && id < 10)
             vBox.getChildren().addAll(tableView(id), Main.lowerLineExit(Main.sceneAdminMenu));
@@ -141,9 +202,13 @@ public class UserWindow {
             vBox.getChildren().addAll(tableView(id), Main.lowerLineExit(Main.sceneUserMenu));
 
 
-        viewResult = new Scene(vBox);
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+
+        viewResult = new Scene(vBox,850,600);
         Main.window.setScene(viewResult);
         Main.window.show();
+        Main.window.setX((primScreenBounds.getWidth() - Main.window.getWidth()) / 2);
+        Main.window.setY((primScreenBounds.getHeight() - Main.window.getHeight()) / 2);
 
     }
 
@@ -200,28 +265,9 @@ public class UserWindow {
         idNaimColum.setMinWidth(50);
         idNaimColum.setCellValueFactory(new PropertyValueFactory<>("hireDate"));
 
-
-        // houseColum.setOnEditStart(event -> System.out.println("Га-ГА- Га"));
-
-
-        //  houseColum.setCellValueFactory(new PropertyValueFactory<>("housee"));
-//        houseColum.setCellFactory(TextFieldTableCell.<Building>forTableColumn());
-//
-//        houseColum.setOnEditCommit((TableColumn.CellEditEvent<Building, String> event) -> {
-//            TablePosition<Building, String> pos = event.getTablePosition();
-//            int newHouse = Integer.parseInt(event.getNewValue());
-//            int row =pos.getRow();
-//            Building building = event.getTableView().getItems().get(row);
-//            building.setHouse(newHouse);
-//
-//        });
-
         table = new TableView();
 
-
         table.setEditable(true);
-        // table.setItems(getBuild(ConnectSQL.getIdClient()));
-
 
         ObservableList<Personnel> personnels = FXCollections.observableArrayList();
 
@@ -241,8 +287,6 @@ public class UserWindow {
         }
 
         table.setItems(personnels);
-//        table.setItems((ObservableList<Building>) Start.objectInputStream.readObject());
-
 
         if (id > 0 && id < 10) {
             table.getColumns().addAll(idTabNumColum, idSurnameColum, idNameColum, idLastNameColum, idBirthColumn, idEducColum, idNaimColum, idCodeColum);

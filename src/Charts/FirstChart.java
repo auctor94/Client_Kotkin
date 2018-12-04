@@ -30,18 +30,23 @@ private BarChart<String,Number> secondChart;
     @FXML
     private PieChart ThrdChart;
 
-    public void onExitButtonPushed(ActionEvent actionEvent) {
-       // Main.objectOutputStream.writeObject(3333);
+    public void onExitButtonPushed(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        Main.objectOutputStream.writeObject(3333);
 
-       // if((int) Main.objectInputStream.readObject()<10)
+        if((int) Main.objectInputStream.readObject()<10)
             Main.window.setScene( Main.sceneAdminMenu );
-       //else
-       //     Main.window.setScene(Main.sceneUserMenu);
+       else
+            Main.window.setScene(Main.sceneUserMenu);
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            Main.objectOutputStream.writeObject(4444);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         XYChart.Series series1 = new XYChart.Series();
         XYChart.Series series2 = new XYChart.Series();
         XYChart.Series series3 = new XYChart.Series();
@@ -81,7 +86,7 @@ private BarChart<String,Number> secondChart;
             pieChartData.add(new PieChart.Data("2015", year2015));
             pieChartData.add(new PieChart.Data("2014", year2014));
             ThrdChart.setData(pieChartData);
-            ThrdChart.setTitle("Количество нанятых рабочих за последние 5 лет\nВсего нанято: " + (year2014 + year2015 + year2016 + year2017 + year2018));
+            ThrdChart.setTitle("Соотношение нанятых людей за последние 5 лет\nВсего нанято: " + (year2014 + year2015 + year2016 + year2017 + year2018));
 
             /*final Label caption = new Label("");
             caption.setTextFill(Color.DARKORANGE);

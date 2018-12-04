@@ -64,7 +64,6 @@ public class Main extends Application {
         topLabel.setPrefSize(600, 80);
         javafx.scene.control.Label label = new Label(text);
         label.setFont(Font.font(20));
-        //label.setFont(Font.);
         topLabel.setAlignment(Pos.CENTER);
         topLabel.setStyle("-fx-background-color: #f9f8eb");
         topLabel.getChildren().addAll(label);
@@ -161,7 +160,7 @@ public class Main extends Application {
         hBox1.setPrefSize(600, 80);
 
 
-        hBox1.setStyle("-fx-background-color: #34abf3");
+        hBox1.setStyle("-fx-background-color: #5c8d89");
         javafx.scene.control.Button buttonExit = new Button("Выход");
         buttonExit.setOnAction(event -> {
             window.setScene(sceneReturn);
@@ -183,7 +182,6 @@ public class Main extends Application {
     public static HBox lowerLineExitRegistr() {
 
         HBox bottomLabel = new HBox(300);
-        //   Label label = new Label("NNNNNN");
         bottomLabel.setPrefSize(600, 100);
         Button button1 = new Button("Регистрация");
         button1.setOnAction(event -> {
@@ -228,10 +226,8 @@ public class Main extends Application {
             int result = (int) objectInputStream.readObject();
             if (result == 111) {
                 AdminWindow.mainMenuAdmin();
-                System.out.println("Admin Menu");
-            } else if (result == 222)
-               // UserWindow.menuUser();
-                System.out.println("UserMenu");
+            } else if (result == 222) {
+                UserWindow.menuUser(); }
             else
                 ErrorWindow.display("Ошибка", "Неверный ввод");
         } catch (IOException e) {
